@@ -17,21 +17,53 @@ Java_com_example_toiuuphammem2_MainActivity_getFullname(JNIEnv *env, jobject thi
     return env->NewStringUTF("ABC");
 }
 
-extern "C"
-JNIEXPORT jobject  JNICALL
-Java_com_example_toiuuphammem2_ResultAndTime_congSoNguyen(JNIEnv *env, jobject obj, jint a,
-                                                             jint b) {
-    jclass objectClass = (env)->FindClass("com/example/toiuuphammem2/ResultAndTime");
-    jfieldID result = (env)->GetFieldID(objectClass,"result","I");
-    jfieldID time = (env)->GetFieldID(objectClass,"time","I");
-    int rtn;
-    struct timespec res, res1;
-    int c= (int) a;
-    int d = (int) b;
-    clock_getres( CLOCK_REALTIME, &res);
-    clock_getres( CLOCK_REALTIME, &res1);
-    (env)->SetIntField(obj, result, rtn);
-    (env)->SetIntField(obj, time,res1.tv_nsec - res.tv_nsec);
 
-    return obj;
+long Fibonacci(long begin, long end)
+{
+    long a1 = 1, a2 = 1;
+    if (end == 1) {
+        if (begin == 0) return (long)1;
+        return (long)0;
+    }
+    long i = 2, a = 1;
+    if (begin == 1) a=1;
+    if (begin == 2) a=2;
+    if (begin == 0) a=0;
+    while (i < begin)
+    {
+        a = a1 + a2;
+        a1 = a2;
+        a2 = a;
+        i++;
+    }
+    long fib = a;
+    i++;
+    while (i <= end)
+    {
+        a = a1 + a2;
+        a1 = a2;
+        a2 = a;
+        i++;
+    }
+    return a - fib;
 }
+
+extern "C"
+JNIEXPORT jlong  JNICALL
+Java_com_example_toiuuphammem2_AbstractNDKActivity_totalFibo(JNIEnv *env, jobject obj, jlong a,
+                                                           jlong b, jint loop) {
+    for (int i = 1; i < loop; i++) {
+        if (a < 0 || b < 0) {
+            return (long)0;
+        }
+        if (b < a) {
+            long k = b;
+            b = a;
+            a = k;
+        }
+        Fibonacci(a, b);
+    }
+    return Fibonacci(a, b);
+}
+
+

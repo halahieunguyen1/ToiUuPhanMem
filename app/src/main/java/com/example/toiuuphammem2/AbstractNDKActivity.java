@@ -1,7 +1,6 @@
 package com.example.toiuuphammem2;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -15,6 +14,7 @@ public abstract class AbstractNDKActivity extends AppCompatActivity {
 
     public abstract void calc();
 //    protected native int congSoNguyen(int a, int b);
+    public native long totalFibo(long a, long b, int loop);
 
     protected abstract void setOnClick();
 

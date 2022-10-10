@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context;
@@ -28,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = view.getId();
         switch (id) {
             case R.id.congSoNguyen:
-                Intent intent = new Intent(this, CongSoNguyenActivity.class);
+                Intent intent = new Intent(this, TotalFiboActivity.class);
                 startActivity(intent);
                 break;
         }
