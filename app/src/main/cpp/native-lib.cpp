@@ -18,52 +18,57 @@ Java_com_example_toiuuphammem2_MainActivity_getFullname(JNIEnv *env, jobject thi
 }
 
 
-long Fibonacci(long begin, long end)
+long Fibonacci(long begin, long end, int loop)
 {
-    long a1 = 1, a2 = 1;
-    if (end == 1) {
-        if (begin == 0) return (long)1;
-        return (long)0;
-    }
-    long i = 2, a = 1;
-    if (begin == 1) a=1;
-    if (begin == 2) a=2;
-    if (begin == 0) a=0;
-    while (i < begin)
-    {
-        a = a1 + a2;
-        a1 = a2;
-        a2 = a;
+    long fib = 0, a;
+    for (int t = 1; t < loop; t++) {
+        if (begin < 0 || end < 0) {
+            return (long)0;
+        }
+        if (end < begin) {
+            long k = end;
+            end = begin;
+            begin = k;
+        }
+        long a1 = 1, a2 = 1;
+        if (end == 1) {
+            if (begin == 0) return (long)1;
+            return (long)0;
+        }
+        long i = 2;
+        a = 1;
+        if (begin == 1) a=1;
+        if (begin == 2) a=2;
+        if (begin == 0) a=0;
+        while (i < begin)
+        {
+            a = a1 + a2;
+            a1 = a2;
+            a2 = a;
+            i++;
+        }
+        fib = a;
         i++;
-    }
-    long fib = a;
-    i++;
-    while (i <= end)
-    {
-        a = a1 + a2;
-        a1 = a2;
-        a2 = a;
-        i++;
+        while (i <= end)
+        {
+            a = a1 + a2;
+            a1 = a2;
+            a2 = a;
+            i++;
+        }
     }
     return a - fib;
 }
-
 extern "C"
 JNIEXPORT jlong  JNICALL
 Java_com_example_toiuuphammem2_AbstractNDKActivity_totalFibo(JNIEnv *env, jobject obj, jlong a,
                                                            jlong b, jint loop) {
-    for (int i = 1; i < loop; i++) {
-        if (a < 0 || b < 0) {
-            return (long)0;
-        }
-        if (b < a) {
-            long k = b;
-            b = a;
-            a = k;
-        }
-        Fibonacci(a, b);
-    }
-    return Fibonacci(a, b);
+    return (*Fibonacci)(a, b, loop);
 }
 
 
+extern "C"
+JNIEXPORT jdouble JNICALL
+Java_com_example_toiuuphammem2_AbstractNDKActivity_CircleArea(JNIEnv *env,jclass clazz,jfloat n) {
+    return 3.14159*n*n;
+}
