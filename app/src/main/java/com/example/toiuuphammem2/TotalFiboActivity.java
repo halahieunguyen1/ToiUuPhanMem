@@ -7,14 +7,6 @@ import android.widget.TextView;
 
 
 public class TotalFiboActivity extends AbstractNDKActivity {
-    private EditText numberOne;
-    private Context context;
-
-    private EditText numberTwo;
-    private TextView resultJava;
-    private TextView resultNativeC;
-    private TextView timeJava;
-    private TextView timeNativeC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

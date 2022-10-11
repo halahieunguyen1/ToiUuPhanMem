@@ -18,13 +18,13 @@
                 android:layout_height="220dp">
                 <Button
                     android:layout_width="195dp"
-                    android:id="@+id/dauPhayDong"
+                    android:id="@+id/phanSoToiGian"
                     android:layout_height="195dp"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="25dp"
                     android:gravity="center"
-                    android:text="Tổng Fibonaci"/>
+                    android:text="Phân số tối giản"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="195dp"
@@ -39,6 +39,25 @@
                     android:layout_height="25dp"
                     android:gravity="center"
                     android:text="Tổng Fibonaci"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+            <LinearLayout
+                android:layout_width="195dp"
+                android:orientation="vertical"
+                android:layout_height="220dp">
+                <Button
+                    android:layout_width="195dp"
+                    android:id="@+id/dienTichHinhTron"
+                    android:layout_height="195dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:text="Diện tích hình tròn"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

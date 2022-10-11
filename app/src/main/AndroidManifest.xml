@@ -26,6 +26,8 @@
                 android:value="" />
         </activity>
         <activity android:name=".TotalFiboActivity"></activity>
+        <activity android:name=".MinimalFractionsActivity"></activity>
+        <activity android:name=".CircleAreaActivity"></activity>
     </application>
 
 </manifest>

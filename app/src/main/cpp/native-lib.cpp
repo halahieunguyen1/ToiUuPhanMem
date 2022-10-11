@@ -69,6 +69,37 @@ Java_com_example_toiuuphammem2_AbstractNDKActivity_totalFibo(JNIEnv *env, jobjec
 
 extern "C"
 JNIEXPORT jdouble JNICALL
-Java_com_example_toiuuphammem2_AbstractNDKActivity_CircleArea(JNIEnv *env,jclass clazz,jfloat n) {
-    return 3.14159*n*n;
+Java_com_example_toiuuphammem2_AbstractNDKActivity_CircleArea(JNIEnv *env, jobject clazz,jfloat n) {
+    double result = 0;
+    for (int t = 1; t < 1000000; t++) {
+        result = 3.14159*n*n;
+    }
+    return result;
+}
+
+extern "C"
+JNIEXPORT jlong JNICALL
+Java_com_example_toiuuphammem2_AbstractNDKActivity_MinimalFractions(JNIEnv *env, jobject clazz,jint n) {
+    unsigned long long knt,x=0;
+    int a[80000];
+    int b=0;
+    bool nt;
+    for(int i=2;i<=n;i++){
+        knt=i;
+        nt=true;
+        for(int j=0;j<b;j++){
+            if (knt%a[j]==0) {
+                knt-=knt/a[j];
+                nt=false;
+            }
+        }
+        if (nt==true) {
+            a[b] = knt;
+            x+=i-1;
+            b++;
+        } else {
+            x=x+knt;
+        }
+    }
+    return x;
 }

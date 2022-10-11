@@ -1,11 +1,11 @@
 package com.example.toiuuphammem2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context;
@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setOnClick() {
         findViewById(R.id.congSoNguyen).setOnClickListener(this);
+        findViewById(R.id.phanSoToiGian).setOnClickListener(this);
+        findViewById(R.id.dienTichHinhTron).setOnClickListener(this);
     }
     @Override
     public void onClick(View view) {
@@ -28,6 +30,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.congSoNguyen:
                 Intent intent = new Intent(this, TotalFiboActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.phanSoToiGian:
+                Intent intent1 = new Intent(this, MinimalFractionsActivity.class);
+                startActivity(intent1);
+                break;
+            case R.id.dienTichHinhTron:
+                Intent intent2 = new Intent(this, CircleAreaActivity.class);
+                startActivity(intent2);
                 break;
         }
     }
