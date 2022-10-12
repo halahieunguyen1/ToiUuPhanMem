@@ -59,6 +59,21 @@
                     android:gravity="center"
                     android:text="Diện tích hình tròn"/>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="195dp"
+                android:orientation="vertical"
+                android:layout_height="220dp">
+                <Button
+                    android:layout_width="195dp"
+                    android:id="@+id/chuanHoaChuoi"
+                    android:layout_height="195dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:text="Chuẩn Hoá chuỗi"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

@@ -14,6 +14,7 @@ public abstract class AbstractNDKActivity extends AppCompatActivity {
     protected EditText loop;
 
     protected EditText numberTwo;
+    protected EditText word;
     protected EditText numberOne;
     protected TextView resultJava;
     protected TextView resultNativeC;
@@ -25,6 +26,7 @@ public abstract class AbstractNDKActivity extends AppCompatActivity {
     public native long totalFibo(long a, long b, int loop);
     public native long MinimalFractions(int a);
     public native double CircleArea(float a);
+    public native String StandardWord(String a);
 
     protected abstract void setOnClick();
 

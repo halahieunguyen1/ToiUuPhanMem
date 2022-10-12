@@ -1,9 +1,6 @@
 package com.example.toiuuphammem2;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.TextView;
 
 
 public class TotalFiboActivity extends AbstractNDKActivity {
@@ -94,7 +91,7 @@ public class TotalFiboActivity extends AbstractNDKActivity {
         }
         return c;
     }
-    }
+}
 
 
 

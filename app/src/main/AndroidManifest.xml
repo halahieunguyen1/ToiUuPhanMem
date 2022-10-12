@@ -28,6 +28,7 @@
         <activity android:name=".TotalFiboActivity"></activity>
         <activity android:name=".MinimalFractionsActivity"></activity>
         <activity android:name=".CircleAreaActivity"></activity>
+        <activity android:name=".StandardWordActivity"></activity>
     </application>
 
 </manifest>

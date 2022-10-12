@@ -18,7 +18,7 @@ Java_com_example_toiuuphammem2_MainActivity_getFullname(JNIEnv *env, jobject thi
 }
 
 
-long Fibonacci(long begin, long end, int loop)
+long __attribute__((noinline)) Fibonacci(long begin, long end, int loop)
 {
     long fib = 0, a;
     for (int t = 1; t < loop; t++) {
@@ -68,7 +68,7 @@ Java_com_example_toiuuphammem2_AbstractNDKActivity_totalFibo(JNIEnv *env, jobjec
 
 
 extern "C"
-JNIEXPORT jdouble JNICALL
+JNIEXPORT jdouble __attribute__((noinline)) JNICALL
 Java_com_example_toiuuphammem2_AbstractNDKActivity_CircleArea(JNIEnv *env, jobject clazz,jfloat n) {
     double result = 0;
     for (int t = 1; t < 1000000; t++) {
@@ -78,7 +78,7 @@ Java_com_example_toiuuphammem2_AbstractNDKActivity_CircleArea(JNIEnv *env, jobje
 }
 
 extern "C"
-JNIEXPORT jlong JNICALL
+JNIEXPORT jlong __attribute__((noinline)) JNICALL
 Java_com_example_toiuuphammem2_AbstractNDKActivity_MinimalFractions(JNIEnv *env, jobject clazz,jint n) {
     unsigned long long knt,x=0;
     int a[80000];
@@ -102,4 +102,11 @@ Java_com_example_toiuuphammem2_AbstractNDKActivity_MinimalFractions(JNIEnv *env,
         }
     }
     return x;
+}
+
+extern "C"
+JNIEXPORT jstring JNICALL
+Java_com_example_toiuuphammem2_AbstractNDKActivity_StandardWord(JNIEnv *env, jobject thiz,
+                                                                jstring a) {
+    return a;
 }

@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.congSoNguyen).setOnClickListener(this);
         findViewById(R.id.phanSoToiGian).setOnClickListener(this);
         findViewById(R.id.dienTichHinhTron).setOnClickListener(this);
+        findViewById(R.id.chuanHoaChuoi).setOnClickListener(this);
     }
     @Override
     public void onClick(View view) {
@@ -38,6 +39,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.dienTichHinhTron:
                 Intent intent2 = new Intent(this, CircleAreaActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.chuanHoaChuoi:
+                Intent intent3 = new Intent(this, CircleAreaActivity.class);
+                startActivity(intent3);
                 break;
         }
     }
